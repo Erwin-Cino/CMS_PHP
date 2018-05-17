@@ -74,6 +74,7 @@
                                 <tbody>
                                    
                                 <?php //FIND ALL CATEGORIES QUERY
+                                    //find all categories using query and displays it on the table to the right
 
                                 $query = "SELECT * from categories";
                                 $result = mysqli_query($con,$query);
@@ -94,7 +95,7 @@
                                 ?>
                                 
                                 <?php // DELETE QUERY 
-                                    
+                                    //will find all category id equating to the delete button using GET method and deletes them
                                 if(isset($_GET['delete'])) {
                                     
                                     $get_cat_id = $_GET['delete'];
