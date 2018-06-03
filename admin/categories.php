@@ -64,6 +64,27 @@
                             </form>
                            <form action="" method="post">
                                <label>Edit Category</label>
+                               
+                                   <?php 
+                               
+                                    $query = "SELECT * from categories";
+                                    $result = mysqli_query($con,$query);
+
+                                        if(!$result) {
+                                            die("query failed" . mysqli_error($con));
+                                        }
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                         $cat_title = $row['cat_title'];
+                                         $cat_id = $row['cat_id'];    
+                    
+        
+                                    } 
+                               
+                                    ?>
+                               
+                               
+                               
+                               
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="cat_title">
                                 </div>
@@ -79,7 +100,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Category Title</th>
-                                        <th>Actions</th>
+                                        <th colspan="2" style="text-align:center;">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -101,6 +122,7 @@
                                                     <td>{$cat_id}</td>
                                                     <td>{$cat_title}</td>
                                                     <td><a href='categories.php?delete={$cat_id}'>Delete</a></td>
+                                                    <td><a href='categories.php?edit={$cat_id}'>Edit</a></td>
                                                  </tr>";      
                                     } 
                                 ?>
