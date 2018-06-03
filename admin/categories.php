@@ -62,36 +62,7 @@
                                     <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                                 </div>
                             </form>
-                           <form action="" method="post">
-                               <label>Edit Category</label>
-                               
-                                   <?php 
-                               
-                                    $query = "SELECT * from categories";
-                                    $result = mysqli_query($con,$query);
-
-                                        if(!$result) {
-                                            die("query failed" . mysqli_error($con));
-                                        }
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                         $cat_title = $row['cat_title'];
-                                         $cat_id = $row['cat_id'];    
-                    
-        
-                                    } 
-                               
-                                    ?>
-                               
-                               
-                               
-                               
-                                <div class="form-group">
-                                    <input class="form-control" type="text" name="cat_title">
-                                </div>
-                                 <div class="form-group">
-                                    <input class="btn btn-primary" type="submit" name="submit" value="Edit Category">
-                                </div>
-                            </form>
+                          
                         </div>
                            
                         <div class="col-xs-6">
