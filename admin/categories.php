@@ -62,6 +62,18 @@
                                     <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                                 </div>
                             </form>
+                            
+                            
+                            <?php 
+                            
+                            if(isset($_GET['edit'])) {
+                                
+                                $cat_id = $_GET['edit'];
+                                include "edit_categories.php";
+                            }
+                            
+                            
+                            ?>
                           
                         </div>
                            
