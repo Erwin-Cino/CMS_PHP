@@ -55,10 +55,20 @@
                            
                             <form action="" method="post">
                                 <div class="form-group">
+                                    <label>Add Category</label>
                                     <input class="form-control" type="text" name="cat_title">
                                 </div>
                                  <div class="form-group">
                                     <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
+                                </div>
+                            </form>
+                           <form action="" method="post">
+                               <label>Edit Category</label>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="cat_title">
+                                </div>
+                                 <div class="form-group">
+                                    <input class="btn btn-primary" type="submit" name="submit" value="Edit Category">
                                 </div>
                             </form>
                         </div>
@@ -69,6 +79,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Category Title</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -83,7 +94,7 @@
                                             die("query failed" . mysqli_error($con));
                                         }
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                         $cat_title = $row['cat_title'];  
+                                         $cat_title = $row['cat_title'];
                                          $cat_id = $row['cat_id'];    
                     
                                             echo "<tr>
