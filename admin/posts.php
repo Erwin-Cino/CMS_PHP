@@ -58,7 +58,7 @@
                                     <td>$post_author</td>
                                     <td>$post_title</td>    
                                     <td>$post_status</td>
-                                    <td>$post_image</td>
+                                    <td><img height='60px' width='auto' src=../images/$post_image alt='image'></td>
                                     <td>$post_tags</td>
                                     <td>$post_date</td>
                                 </tr>";
