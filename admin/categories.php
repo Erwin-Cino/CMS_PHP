@@ -31,10 +31,7 @@
     
     
                            ?>
-                           
-                           
-                           
-                           
+                                                   
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label>Add Category</label>
@@ -79,8 +76,8 @@
                                 
                                 <?php // DELETE QUERY 
                                     //will find all category id equating to the delete button using GET method and deletes them
-                                    delete_query();
                                     
+                                    delete_category();
                                     
                                 ?>
                                 
@@ -90,7 +87,7 @@
                             
                         </div>
                             
-                            
+                 
                        
                         
                     </div>

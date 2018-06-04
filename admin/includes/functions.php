@@ -19,7 +19,7 @@ function insert_categories() {
 
             $create_category_query = mysqli_query($con,$query);
             
-            echo "category '{$cat_title}' added";
+            echo "Category '{$cat_title}' added";
 
             if (!$create_category_query) {
                 die('query failed' . mysqli_query($con));
@@ -57,7 +57,7 @@ function table_categories() {
 }
 
 
-function delete_query() {
+function delete_category() {
      if(isset($_GET['delete'])) {
          
          
