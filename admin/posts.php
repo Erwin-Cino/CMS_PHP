@@ -23,32 +23,51 @@
                             <small>Author</small>
                         </h1>
                         
-                        <?php 
-                        
-                        $query = "SELECT * from posts";
-                        $select_posts = mysqli_query($con,$query);
-                        
-                        while ($row = mysqli_fetch_assoc($select_posts)) {
-                            row["cat_id"] = $cat_id;
-                        }
-                        
-                        ?>
-                        
-                        
-                        <table class="table table-bordered table-hover">
+                          <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>Post ID</th>
+                                    <th>Category</th>
                                     <th>Author</th>
                                     <th>Title</th>
-                                    <th>Category</th>
                                     <th>Status</th>
                                     <th>Image</th>
                                     <th>Tags</th>
                                     <th>Date</th>
                                 </tr>
                             </thead>
+                        
+                        <?php 
+                        
+                        $query = "SELECT * from posts";
+                        $select_posts = mysqli_query($con,$query);
+                        
+                        while ($row = mysqli_fetch_assoc($select_posts)) {
+                           $post_cat_id = $row["post_category_id"];
+                           $post_title = $row["post_title"];
+                           $post_author = $row["post_author"];
+                           $post_date = $row["post_date"];
+                           $post_tags = $row["post_tags"];
+                           $post_status = $row["post_status"];
+                           $post_image = $row["post_image"];
+                           $post_id = $row["post_id"];
+                        
+                            echo "<tr>
+                                    <td>$post_id</td>
+                                    <td>$post_cat_id</td>
+                                    <td>$post_author</td>
+                                    <td>$post_title</td>    
+                                    <td>$post_status</td>
+                                    <td>$post_image</td>
+                                    <td>$post_tags</td>
+                                    <td>$post_date</td>
+                                </tr>";
+                        }
+                        
+                        ?>
+                        
   
+<!--
                         <tbody>
                             <tr>
                                 <td>10</td>
@@ -60,8 +79,11 @@
                                 <td>Dev</td>
                                 <td>08/5/2018</td>
                             </tr>
+-->
                         </tbody>
                    </table>
+                    
+                    <?php  ?>
 
                     </div>
                 </div>
