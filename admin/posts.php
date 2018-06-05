@@ -62,6 +62,10 @@
                     
                         
                     ?>
+                    
+                <div class="form-group">
+                  <a href="posts.php?source=addposts">Add Posts</a>
+                </div>
 
                     </div>
                 </div>
