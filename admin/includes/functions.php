@@ -1,6 +1,17 @@
 <?php 
 
 
+function check_query($result) {
+    
+    global $con;
+    
+    if(!$result) {
+        die("Query failed " . mysqli_error($con));
+    }
+
+}
+
+
 function insert_categories() {
     
     global $con;

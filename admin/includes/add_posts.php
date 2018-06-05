@@ -24,10 +24,8 @@ if (isset($_POST['create_post'])) {
     
     $insert_post_date = mysqli_query($con,$query);
     
-    
-    if(!$insert_post_date) {
-        die("Query failed " . mysqli_error($con));
-    }
+    check_query($insert_post_date);
+
 
 }
 

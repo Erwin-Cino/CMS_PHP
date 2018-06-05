@@ -10,9 +10,11 @@
                                     <th>Image</th>
                                     <th>Tags</th>
                                     <th>Date</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
-                        
+                            <tbody>
+                            
                         <?php 
                         
                         $query = "SELECT * from posts";
@@ -37,6 +39,7 @@
                                     <td><img height='60px' width='auto' src=../images/$post_image alt='image'></td>
                                     <td>$post_tags</td>
                                     <td>$post_date</td>
+                                    <td><a href='posts.php?delete={$post_id}'>Delete</a></td>
                                 </tr>";
                         }
                         
