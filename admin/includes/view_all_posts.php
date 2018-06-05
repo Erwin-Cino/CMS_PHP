@@ -40,6 +40,7 @@
                                     <td>$post_tags</td>
                                     <td>$post_date</td>
                                     <td><a href='posts.php?delete={$post_id}'>Delete</a></td>
+                                     <td><a href='posts.php?delete={$post_id}'>Edit</a></td>
                                 </tr>";
                         }
                         
@@ -57,7 +58,9 @@
                                 
                                 $delete_query = mysqli_query($con,$query);
                                 
-                                //check_query($delete_post);
+                                check_query($delete_post);
+                                echo "Post {$post_title} Successfully deleted";
+
                                 
 
                             }        
@@ -65,19 +68,5 @@
                                 
                         ?>
                         
-  
-<!--
-                        <tbody>
-                            <tr>
-                                <td>10</td>
-                                <td>Erwin</td>
-                                <td>Bootstrap</td>
-                                <td>Test</td>
-                                <td>Draft</td>
-                                <td>This image</td>
-                                <td>Dev</td>
-                                <td>08/5/2018</td>
-                            </tr>
--->
                         </tbody>
                    </table>
