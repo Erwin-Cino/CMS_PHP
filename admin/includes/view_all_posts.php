@@ -45,6 +45,26 @@
                         
                         ?>
                         
+                        
+                        <?php 
+                                
+                            if(isset($_GET['delete'])) {
+                                
+                                $post_delete_id = $_GET['delete'];                          
+                            
+                                
+                                $query = "DELETE from posts WHERE post_id = {$post_delete_id}";
+                                
+                                $delete_query = mysqli_query($con,$query);
+                                
+                                //check_query($delete_post);
+                                
+
+                            }        
+                                
+                                
+                        ?>
+                        
   
 <!--
                         <tbody>
