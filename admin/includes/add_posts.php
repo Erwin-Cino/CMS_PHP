@@ -8,6 +8,7 @@ if (isset($_POST['create_post'])) {
      $post_status = $_POST['post_status'];
      $post_category = $_POST['category'];
      $post_tags = $_POST['post_tags'];
+     $post_category_id = $_POST['post_category_id'];
      $post_image = $_FILES['image']['name'];
      $post_image_temp = $_FILES['image']['tmp_name'];
      $post_content = $_POST['post_content'];
@@ -17,8 +18,17 @@ if (isset($_POST['create_post'])) {
     
     move_uploaded_file($post_image_temp, "../images/$post_image");
     
+    $query = "INSERT INTO `posts`(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) ";
+        
+    $query .= "VALUES ('{$post_category_id}', '{$post_title}' , '{$post_author}' ,  now() , '{$post_image}' , '{$post_content}' , '{$post_tags}' , '{$post_comment_count}' , '{$post_status}')";
+    
+    $insert_post_date = mysqli_query($con,$query);
     
     
+    if(!$insert_post_date) {
+        die("Query failed " . mysqli_error($con));
+    }
+
 }
 
 
@@ -36,6 +46,11 @@ if (isset($_POST['create_post'])) {
   <div class="form-group">
     <label for="post_category">Post Category</label>
     <input type="text" class="form-control" name="category">
+  </div>
+  
+<div class="form-group">
+    <label for="post_category">Post Category</label>
+    <input type="text" class="form-control" name="post_category_id">
   </div>
   
   <div class="form-group">
